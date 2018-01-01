@@ -1,0 +1,26 @@
+/* ------------------------------------------
+   settings.VARIABLES
+------------------------------------------ */
+
+// Typography
+$ff: "Space Mono", monospace; 
+
+// Colors
+$color-mint: #98F3D7;
+$color-red: #FF001F;
+
+$dark: #1C1D1E;
+$light: #FAFAFA;
+
+// Layout
+$gutter: 20px;
+
+// Animations
+$transition-in: .1s;
+$transition-out: .3s;
+
+// Z-Index Map
+$zindex: (
+  header: 1000,
+  modal: 2000
+);

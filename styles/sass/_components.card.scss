@@ -1,0 +1,302 @@
+.c-card {
+    margin-bottom: 150px;
+    @include mq(850) {
+        margin-bottom: 300px;
+    }
+}
+
+.c-card--intro {
+    color: $color-mint;
+
+    p {
+        font-weight: 700;
+        line-height: 1.1;
+    }
+
+    img {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    @include responsive-font(5vw, 20px, 65px, 25px);
+}
+
+.c-card--stat {
+    // background-image: linear-gradient(-180deg, #930BFF 0%, #000000 100%);
+    position: relative;
+    align-items: center;
+
+    @include mq(1240) {
+        align-items: stretch;
+    }
+
+    @include mq(850) {
+        display: flex;
+    }
+
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content:'';
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 3px solid #9150C9;
+        box-shadow: 0 0 20px 0 #9150C9,
+        inset 0 0 20px 0 #9150C9;
+        background-color: transparent;
+        border-radius: 4px;
+        animation-name: flicker;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    &:nth-child(odd):before {
+        animation-delay: 1s;
+    }
+
+    &__illustration {
+        position: relative;
+
+        @include mq(850) {
+            width: 50%;
+        }
+
+        &-inner {
+            padding: 30px;
+
+            @include mq(1240) {
+                position: absolute;
+                width: 500px;
+                top: -100px;
+                left: -70px;
+            }
+        }
+    }
+
+
+    &__body {
+        text-align: center;
+        padding: 20px 0 30px 0;
+
+        @include mq(850) {
+            width: 50%;
+        }
+    }
+
+    &__body-nr {
+        font-size: rem-calc(100);
+        color: $color-mint;
+        font-weight: 700;
+        text-shadow: 0 0 10px $color-mint;
+        line-height: 1;
+
+        @include mq(1050) {
+            font-size: rem-calc(180);
+        }
+    }
+
+    &__body-label {
+        font-size: rem-calc(30);
+        color: $color-mint;
+
+        span {
+            font-size: rem-calc(20);
+            display: block;
+        }
+    }
+}
+
+
+.c-card--month {
+    background-image: linear-gradient(-180deg, #930BFF 0%, #000000 100%);
+    position: relative;
+
+    @include mq(870) {
+        display: flex;
+    }
+
+    &-title {
+        position: absolute;
+        left: 0%;
+        line-height: 1;
+        font-style: italic;
+        color: $color-mint;
+        text-shadow: 0 0 10px $color-mint;
+        top: -15px;
+        font-size: rem-calc(20);
+
+        @include mq(650) {
+            font-size: rem-calc(50);
+            top: -40px;
+        }
+
+        @include mq(1120) {
+            top: -90px;
+            font-size: rem-calc(120);
+        }
+    }
+
+    &__body {
+        width: 100%;
+        font-size: rem-calc(14);
+        color: $color-mint;
+        line-height: 2;
+        padding: 10px;
+
+        @include mq(650) {
+            padding: 40px;
+            font-size: rem-calc(20);
+        }
+
+        @include mq(870) {
+            width: 60%;
+        }
+    }
+
+    &__gif {
+        background-size: 70%;
+        width: 100%;
+        background-position: center center;
+        height: 300px;
+
+        @include mq(870) {
+            height: auto;
+            width: 40%;
+        }
+    }
+
+    a {
+        border-bottom: 2px solid rgba($color-mint, .5);
+        text-decoration: none;
+        color: $color-mint;
+        padding: 0 5px;
+
+        &:hover {
+            background-color: $color-mint;
+            color: $dark;
+        }
+    }
+}
+
+
+.c-card--video {
+    position: relative;
+    background-image: linear-gradient(-180deg, #930BFF 0%, #000000 100%);
+    box-shadow: 0 0 90px 0 $color-mint;
+
+
+    iframe {
+        height: 600px;
+    }
+    &-title {
+        color: $color-mint;
+        position: absolute;
+        left: 50%;
+        line-height: 1;
+        transform: translateX(-50%);
+        font-style: italic;
+        text-shadow: 0 0 10px $color-mint;
+        top: -15px;
+        font-size: rem-calc(20);
+
+        @include mq(650) {
+            font-size: rem-calc(50);
+            top: -40px;
+        }
+
+        @include mq(1120) {
+            top: -90px;
+            font-size: rem-calc(120);
+        }
+
+    }
+
+}
+
+
+.top-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    &__line {
+        border: 2px solid $color-red;
+        box-shadow: 0 0 40px 0 $color-red;
+        margin-bottom: 15px;
+
+        &:nth-child(2) {
+            border-color: rgba($color-red, .9);
+        }
+
+        &:nth-child(3) {
+            border-color: rgba($color-red, .8);
+        }
+
+        &:nth-child(3) {
+            border-color: rgba($color-red, .7);
+        }
+
+        &:nth-child(4) {
+            border-color: rgba($color-red, .6);
+            animation-name: flicker;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        &:nth-child(5) {
+            border-color: rgba($color-red, .5);
+        }
+        
+        &:nth-child(6) {
+            border-color: rgba($color-red, .4);
+        }
+        
+        &:nth-child(7) {
+            border-color: rgba($color-red, .3);
+        }
+        
+        &:nth-child(8) {
+            border-color: rgba($color-red, .2);
+        }
+    }
+
+}
+
+
+
+.c-card--sponsors {
+    position: relative;
+    background-color: #fff;
+
+    &-title {
+        text-align: center;
+        color: $color-mint;
+        position: absolute;
+        left: 50%;
+        width: 100%;
+        line-height: 1;
+        transform: translateX(-50%);
+        font-style: italic;
+        text-shadow: 0 0 10px $color-mint;
+        top: -15px;
+        font-size: rem-calc(20);
+
+        @include mq(650) {
+            font-size: rem-calc(50);
+            top: -40px;
+        }
+
+        @include mq(1120) {
+            top: -90px;
+            font-size: rem-calc(120);
+        }
+
+    }
+
+}
+
